@@ -7,3 +7,14 @@ az login
 az acr login --name acrleozanatalab02
 
 docker tag cursoia/land:latest acrleozanatalab02.azurecr.io/cursoia-land:latest
+
+docker push acrleozanatalab02.azurecr.io/cursoia-land:latest
+
+Criar arquivo de Services.yaml e Deployment.yaml
+
+az aks get-credentials --resource-group LAB002 --name aks-dev-eastus-002-dbo-lab002
+
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+kubectl get svc landing-page
